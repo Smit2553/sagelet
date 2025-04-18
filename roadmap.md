@@ -116,4 +116,4 @@ To build the fastest and most seamless way to interact with large language model
 
 ## Contribution & Feedback
 
-Sagelet is an open, evolving project. Contributions, feedback, and feature suggestions are encouraged. See `CONTRIBUTING.md` (coming soon) to get involved.
+Sagelet is an open, evolving project. Contributions, feedback, and feature suggestions are encouraged. See [CONTRIBUTING.md](CONTRIBUTING.md) to get involved.
