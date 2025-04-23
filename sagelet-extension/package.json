@@ -7,6 +7,7 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"@vitejs/plugin-react": "^4.4.1",
 		"preact": "^10.25.3",
 		"preact-iso": "^2.9.1"
 	},

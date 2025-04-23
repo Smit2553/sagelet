@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Sagelet",
+  "version": "0.0.1",
+  "description": "A lightweight, hotkey-activated browser extension overlay for contextual queries.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "src/popup/index.html",
+    "default_icon": {
+      "16": "src/assets/icons/icon-16.png",
+      "48": "src/assets/icons/icon-48.png",
+      "128": "src/assets/icons/icon-128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content.ts"]
+    }
+  ],
+  "options_page": "src/options/index.html",
+  "icons": {
+    "16": "src/assets/icons/icon-16.png",
+    "48": "src/assets/icons/icon-48.png",
+    "128": "src/assets/icons/icon-128.png"
+  }
+}
