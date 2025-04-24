@@ -3,25 +3,61 @@
   "name": "Sagelet",
   "version": "0.0.1",
   "description": "A lightweight, hotkey-activated browser extension overlay for contextual queries.",
-  "permissions": ["storage", "activeTab", "scripting"],
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
   "action": {
-    "default_popup": "src/popup/index.html",
+    "default_popup": "popup.html",
     "default_icon": {
-      "16": "src/assets/icons/icon-16.png",
-      "48": "src/assets/icons/icon-48.png",
-      "128": "src/assets/icons/icon-128.png"
+      "16": "assets/icons/icon-16.png",
+      "48": "assets/icons/icon-48.png",
+      "128": "assets/icons/icon-128.png"
     }
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["src/content.ts"]
+      "js": ["content.js"]
     }
   ],
-  "options_page": "src/options/index.html",
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Space",
+        "mac": "Command+Space"
+      },
+      "description": "Open the Sagelet popup"
+    },
+    "toggle_overlay": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Space",
+        "mac": "Command+Shift+Space"
+      },
+      "description": "Toggle the Sagelet overlay"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
   "icons": {
-    "16": "src/assets/icons/icon-16.png",
-    "48": "src/assets/icons/icon-48.png",
-    "128": "src/assets/icons/icon-128.png"
+    "16": "assets/icons/icon-16.png",
+    "48": "assets/icons/icon-48.png",
+    "128": "assets/icons/icon-128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "sagelet@example.com",
+      "strict_min_version": "109.0"
+    }
   }
 }

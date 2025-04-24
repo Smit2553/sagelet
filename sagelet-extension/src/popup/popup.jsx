@@ -10,4 +10,4 @@ export function Popup() {
 }
 
 // Render the Popup component to the popup-root element
-render(<Popup />, document.getElementById("popup-root")!);
+render(<Popup />, document.getElementById("popup-root"));
